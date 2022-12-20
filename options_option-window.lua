@@ -37,6 +37,17 @@ https://github.com/nanotee/nvim-lua-guide#sourcing-lua-files
 Example:
 :so C:\Users\<user name>\Documents\options_option-window.lua
 
+------------------------------
+I want this:
+
+ 1 important
+
+compatible	behave very Vi compatible (not advisable) 	set nocp	cp
+cpoptions	list of flags to specify Vi compatibility 	set cpo=aABceFs_
+paste	paste mode, insert typed text literally 	set nopaste	paste
+pastetoggle	key sequence to toggle paste mode 	set pt=
+
+...
 
 ------------------------------------------------------------
 My notes (NeoVim):
