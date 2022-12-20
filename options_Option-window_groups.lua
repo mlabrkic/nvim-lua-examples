@@ -37,6 +37,20 @@ https://github.com/nanotee/nvim-lua-guide#sourcing-lua-files
 Example:
 :so C:\Users\<user name>\Documents\options_option-window_groups.lua
 
+------------------------------
+I want this:
+
+compatible	 1 important
+cpoptions	 1 important
+paste	 1 important
+pastetoggle	 1 important
+runtimepath	 1 important
+packpath	 1 important
+helpfile	 1 important
+whichwrap	 2 moving around, searching and patterns
+startofline	 2 moving around, searching and patterns
+
+...
 
 ------------------------------------------------------------
 My notes (NeoVim):
