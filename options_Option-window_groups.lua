@@ -229,7 +229,16 @@ lua print(type(lineStart1))
 lua print(string.len(lineStart1))
 
 ------------------------------
-lua firstWord = vim.split(line1, "\t")
+lua line1 = vim.api.nvim_get_current_line()
+lua words = vim.split(line1, "\t")
+or
+lua words = vim.split(line1, " ")
+
+lua firstWord = words[2]
+
+lua print(words)
+lua =words
+
 lua print(firstWord)
 lua =firstWord
 
@@ -306,9 +315,10 @@ it supports something similar, albeit more limited in functionality.
 ------------------------------------------------------------
 local A = vim.api
 
+-- nvim_create_buf({listed}, {scratch})
 -- local buf = vim.api.nvim_create_buf(true, false)
-
 local buf = A.nvim_create_buf('listed', '')  -- Create a new buffer
+
 A.nvim_buf_set_name(buf, 'Options.txt')  -- Assign a name to the new buffer
 A.nvim_buf_set_option(buf, 'buftype', '')  -- set buftype="" (because I want to save the file)
 
