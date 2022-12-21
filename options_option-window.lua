@@ -13,14 +13,12 @@ options_option-window.txt
 ---------------
  1 important
 
-- 'compatible' is always disabled
-nocompatible
 compatible	behave very Vi compatible (not advisable)
-	set nocp	cp
-
-'cpoptions'	  'cpo'     flags for Vi-compatible behavior
-cpoptions=aABceFs_
-
+ 	set nocp	cp
+cpoptions	list of flags to specify Vi compatibility
+ 	set cpo=aABceFs_
+paste	paste mode, insert typed text literally
+ 	set nopaste	paste
 ...
 
 ------------------------------------------------------------
@@ -46,79 +44,16 @@ compatible	behave very Vi compatible (not advisable) 	set nocp	cp
 cpoptions	list of flags to specify Vi compatibility 	set cpo=aABceFs_
 paste	paste mode, insert typed text literally 	set nopaste	paste
 pastetoggle	key sequence to toggle paste mode 	set pt=
+...
+helpfile	name of the main help file 	set hf=C:\\UTILS\\Neovim\\share\\nvim\\runtime\\doc\\help.txt
 
+ 2 moving around, searching and patterns
+
+whichwrap	list of flags specifying which commands wrap to another line	(local to window) 	set ww=b,s
 ...
 
-------------------------------------------------------------
-My notes (NeoVim):
-------------------------------
--- 01:
-:h
-:h helphelp
+-- #########################################################
 
-The Nvim help (text) files are in (OS Windows):
-C:\UTILS\Neovim\share\nvim\runtime\doc\
-
-------------------------------
--- 02:
-h luaref-Lib
-5  STANDARD LIBRARIES
--->
-
-h string.sub()
-
-h string.match
-
-h luaref-patterns
-- `%a`  represents all letters.
-- `%d`  represents all digits.
-
-h table.concat
-h luaref-ipairs()
-
-------------------------------
--- 03:
-h lua.txt
-Lua engine
--->
-
-h vim.regex()
-Vim regexes can be used directly from lua. Currently they only allow
-matching within a single line.
-
-------------------------------
--- 04:
-h api.txt
-Nvim API
-Nvim exposes a powerful API that can be used by plugins and external processes
-via |RPC|, |Lua| and VimL (|eval-api|).
--->
-
-NOTE:
-
-Global Functions
-h api-global
--->
-h nvim_get_current_line()
-
-Options Functions
-h api-options
-
-Buffer Functions
-h api-buffer
-
-------------------------------
-https://github.com/nanotee/nvim-lua-guide#the-vim-namespace
-
-Neovim exposes a global "vim" variable which serves as an entry point to interact with its APIs from Lua.
-It provides users with an extended "standard library" of functions as well as various sub-modules.
-
-Some notable functions and modules include:
-vim.inspect: transform Lua objects into human-readable strings (useful for inspecting tables)
-vim.regex: use Vim regexes from Lua
-vim.api: module that exposes API functions (the same API used by remote plugins)
-
-------------------------------------------------------------
 RESOURCES (Neovim Lua API):
 
 https://www.davekuhlman.org/nvim-lua-info-notes.html
@@ -132,59 +67,51 @@ https://github.com/nanotee/nvim-lua-guide
 ------------------------------------------------------------
 NOTE:
 
-h nvim_create_buf
-nvim_create_buf({listed}, {scratch})
+------------------------------
+-- 02:
+h luaref-Lib
 
-Creates a new, empty, unnamed buffer.
-• {listed}   Sets 'buflisted'
+5  STANDARD LIBRARIES
 
-Return: ~
-Buffer handle, or 0 on error
+5.4 - String Manipulation
+h luaref-libString
 
-buf = 0 (current buffer)
+h string.sub
+h string.len
+h string.match
 
----------------
-1. Create a new buffer
--- local buf = vim.api.nvim_create_buf(true, false)
-:lua buf = vim.api.nvim_create_buf('listed', '')  -- Create a new buffer
-:lua =buf
+h luaref-patterns
+- `%a`  represents all letters.
+- `%d`  represents all digits.
 
-2. Assign a name to the new buffer
-lua vim.api.nvim_buf_set_name(buf, 'Options.txt')  -- Assign a name to the new buffer
+------------------------------
+-- 04:
+Nvim API
+h api.txt
 
-3. Setting Options on a Buffer
-:set buftype?
-lua vim.api.nvim_buf_set_option(buf, 'buftype', '')  -- set buftype="" (because I want to save the file)
+Options Functions
+h api-options
+h nvim_buf_set_option
 
-4. Appending to a Buffer
+Buffer Functions
+h api-buffer
+-->
+h nvim_buf_set_name
+h nvim_buf_line_count
+h nvim_buf_get_lines
 h nvim_buf_set_lines
-lua vim.api.nvim_buf_set_lines(buf, -1, -1, true, {"abc", "def"})
+
+Global Functions
+h api-global
+-->
+h nvim_create_buf
+h nvim_get_current_line
+h nvim_get_current_buf
+h nvim_list_bufs
+h nvim_notify
 
 ------------------------------------------------------------
-NOTE:
-
-h luaref-libString
-h string.sub()
-
-lua line1 = vim.api.nvim_get_current_line()
-lua lineStart1 = string.sub(line1, 1, 1)
-lua print('"' .. lineStart1 .. '"')
-
-lua print(type(lineStart1))
-lua print(string.len(lineStart1))
-
-------------------------------
-lua firstWord = vim.split(line1, "\t")
-lua print(firstWord)
-lua =firstWord
-
-------------------------------
-h api-buffer
-lua print(vim.api.nvim_buf_line_count(0))
-
-Go to the buffer "options.txt"
-lua linesNum = vim.api.nvim_buf_line_count(0)
-lua print(linesNum)
+h buffers
 
 ------------------------------------------------------------
 Lua Quick Guide -
@@ -193,6 +120,7 @@ https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb
 h luaref-patterns
 - `%a`  represents all letters.
 - `%d`  represents all digits.
+-- %A represents all non-letter characters.
 
 ------------------------------------------------------------
 ]]
@@ -200,8 +128,10 @@ h luaref-patterns
 ------------------------------------------------------------
 local A = vim.api
 
+-- nvim_create_buf({listed}, {scratch})
 -- local buf = vim.api.nvim_create_buf(true, false)
 local buf = A.nvim_create_buf('listed', '')  -- Create a new buffer
+
 A.nvim_buf_set_name(buf, 'Options.txt')  -- Assign a name to the new buffer
 A.nvim_buf_set_option(buf, 'buftype', '')  -- set buftype="" (because I want to save the file)
 
