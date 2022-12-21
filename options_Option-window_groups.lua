@@ -234,7 +234,7 @@ lua words = vim.split(line1, "\t")
 or
 lua words = vim.split(line1, " ")
 
-lua firstWord = words[2]
+lua firstWord = words[1]
 
 lua print(words)
 lua =words
