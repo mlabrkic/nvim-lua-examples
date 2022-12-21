@@ -132,7 +132,7 @@ local A = vim.api
 -- local buf = vim.api.nvim_create_buf(true, false)
 local buf = A.nvim_create_buf('listed', '')  -- Create a new buffer
 
-A.nvim_buf_set_name(buf, 'Options.txt')  -- Assign a name to the new buffer
+A.nvim_buf_set_name(buf, 'Options_option-window.txt')  -- Assign a name to the new buffer
 A.nvim_buf_set_option(buf, 'buftype', '')  -- set buftype="" (because I want to save the file)
 
 ------------------------------
