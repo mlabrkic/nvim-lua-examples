@@ -1,0 +1,329 @@
+01optionsOption-window_groups.lua
+-->
+------------------------------------------------------------
+compatible, 1 important
+cpoptions, 1 important
+paste, 1 important
+pastetoggle, 1 important
+runtimepath, 1 important
+packpath, 1 important
+helpfile, 1 important
+whichwrap, 2 moving around, searching and patterns
+startofline, 2 moving around, searching and patterns
+paragraphs, 2 moving around, searching and patterns
+sections, 2 moving around, searching and patterns
+path, 2 moving around, searching and patterns
+cdhome, 2 moving around, searching and patterns
+cdpath, 2 moving around, searching and patterns
+autochdir, 2 moving around, searching and patterns
+wrapscan, 2 moving around, searching and patterns
+incsearch, 2 moving around, searching and patterns
+magic, 2 moving around, searching and patterns
+regexpengine, 2 moving around, searching and patterns
+ignorecase, 2 moving around, searching and patterns
+smartcase, 2 moving around, searching and patterns
+casemap, 2 moving around, searching and patterns
+maxmempattern, 2 moving around, searching and patterns
+define, 2 moving around, searching and patterns
+include, 2 moving around, searching and patterns
+includeexpr, 2 moving around, searching and patterns
+tagbsearch, 3 tags
+taglength, 3 tags
+tags, 3 tags
+tagcase, 3 tags
+tagrelative, 3 tags
+tagstack, 3 tags
+showfulltag, 3 tags
+tagfunc, 3 tags
+cscopeprg, 3 tags
+cscopetag, 3 tags
+cscopetagorder, 3 tags
+cscopeverbose, 3 tags
+cscopepathcomp, 3 tags
+cscopequickfix, 3 tags
+cscoperelative, 3 tags
+scroll, 4 displaying text
+scrolloff, 4 displaying text
+wrap, 4 displaying text
+linebreak, 4 displaying text
+breakindent, 4 displaying text
+breakindentopt, 4 displaying text
+breakat, 4 displaying text
+showbreak, 4 displaying text
+sidescroll, 4 displaying text
+sidescrolloff, 4 displaying text
+display, 4 displaying text
+fillchars, 4 displaying text
+cmdheight, 4 displaying text
+columns, 4 displaying text
+lines, 4 displaying text
+window, 4 displaying text
+lazyredraw, 4 displaying text
+redrawtime, 4 displaying text
+writedelay, 4 displaying text
+list, 4 displaying text
+listchars, 4 displaying text
+number, 4 displaying text
+relativenumber, 4 displaying text
+numberwidth, 4 displaying text
+conceallevel, 4 displaying text
+concealcursor, 4 displaying text
+background, 5 syntax, highlighting and spelling
+filetype, 5 syntax, highlighting and spelling
+syntax, 5 syntax, highlighting and spelling
+synmaxcol, 5 syntax, highlighting and spelling
+highlight, 5 syntax, highlighting and spelling
+hlsearch, 5 syntax, highlighting and spelling
+termguicolors, 5 syntax, highlighting and spelling
+cursorcolumn, 5 syntax, highlighting and spelling
+cursorline, 5 syntax, highlighting and spelling
+cursorlineopt, 5 syntax, highlighting and spelling
+colorcolumn, 5 syntax, highlighting and spelling
+spell, 5 syntax, highlighting and spelling
+spelllang, 5 syntax, highlighting and spelling
+spellfile, 5 syntax, highlighting and spelling
+spellcapcheck, 5 syntax, highlighting and spelling
+spelloptions, 5 syntax, highlighting and spelling
+spellsuggest, 5 syntax, highlighting and spelling
+mkspellmem, 5 syntax, highlighting and spelling
+laststatus, 6 multiple windows
+statusline, 6 multiple windows
+equalalways, 6 multiple windows
+eadirection, 6 multiple windows
+winheight, 6 multiple windows
+winminheight, 6 multiple windows
+winfixheight, 6 multiple windows
+winfixwidth, 6 multiple windows
+winwidth, 6 multiple windows
+winminwidth, 6 multiple windows
+helpheight, 6 multiple windows
+previewheight, 6 multiple windows
+previewwindow, 6 multiple windows
+hidden, 6 multiple windows
+switchbuf, 6 multiple windows
+splitbelow, 6 multiple windows
+splitright, 6 multiple windows
+scrollbind, 6 multiple windows
+scrollopt, 6 multiple windows
+cursorbind, 6 multiple windows
+showtabline, 7 multiple tab pages
+tabpagemax, 7 multiple tab pages
+tabline, 7 multiple tab pages
+scrolljump, 8 terminal
+guicursor, 8 terminal
+title, 8 terminal
+titlelen, 8 terminal
+titlestring, 8 terminal
+titleold, 8 terminal
+icon, 8 terminal
+iconstring, 8 terminal
+mouse, 9 using the mouse
+mousemodel, 9 using the mouse
+mousetime, 9 using the mouse
+printoptions, 10 printing
+printdevice, 10 printing
+printexpr, 10 printing
+printfont, 10 printing
+printheader, 10 printing
+printencoding, 10 printing
+printmbcharset, 10 printing
+printmbfont, 10 printing
+terse, 11 messages and info
+shortmess, 11 messages and info
+showcmd, 11 messages and info
+showmode, 11 messages and info
+ruler, 11 messages and info
+rulerformat, 11 messages and info
+report, 11 messages and info
+verbose, 11 messages and info
+verbosefile, 11 messages and info
+more, 11 messages and info
+confirm, 11 messages and info
+errorbells, 11 messages and info
+visualbell, 11 messages and info
+belloff, 11 messages and info
+helplang, 11 messages and info
+selection, 12 selecting text
+selectmode, 12 selecting text
+clipboard, 12 selecting text
+keymodel, 12 selecting text
+undolevels, 13 editing text
+undofile, 13 editing text
+undodir, 13 editing text
+undoreload, 13 editing text
+modified, 13 editing text
+readonly, 13 editing text
+modifiable, 13 editing text
+textwidth, 13 editing text
+wrapmargin, 13 editing text
+backspace, 13 editing text
+comments, 13 editing text
+formatoptions, 13 editing text
+formatlistpat, 13 editing text
+formatexpr, 13 editing text
+complete, 13 editing text
+completeopt, 13 editing text
+pumheight, 13 editing text
+pumwidth, 13 editing text
+completefunc, 13 editing text
+omnifunc, 13 editing text
+dictionary, 13 editing text
+thesaurus, 13 editing text
+infercase, 13 editing text
+digraph, 13 editing text
+tildeop, 13 editing text
+operatorfunc, 13 editing text
+showmatch, 13 editing text
+matchtime, 13 editing text
+matchpairs, 13 editing text
+joinspaces, 13 editing text
+nrformats, 13 editing text
+tabstop, 14 tabs and indenting
+shiftwidth, 14 tabs and indenting
+vartabstop, 14 tabs and indenting
+varsofttabstop, 14 tabs and indenting
+smarttab, 14 tabs and indenting
+softtabstop, 14 tabs and indenting
+shiftround, 14 tabs and indenting
+expandtab, 14 tabs and indenting
+autoindent, 14 tabs and indenting
+smartindent, 14 tabs and indenting
+cindent, 14 tabs and indenting
+cinoptions, 14 tabs and indenting
+cinkeys, 14 tabs and indenting
+cinwords, 14 tabs and indenting
+cinscopedecls, 14 tabs and indenting
+indentexpr, 14 tabs and indenting
+indentkeys, 14 tabs and indenting
+copyindent, 14 tabs and indenting
+preserveindent, 14 tabs and indenting
+lisp, 14 tabs and indenting
+lispwords, 14 tabs and indenting
+foldenable, 15 folding
+foldlevel, 15 folding
+foldlevelstart, 15 folding
+foldcolumn, 15 folding
+foldtext, 15 folding
+foldclose, 15 folding
+foldopen, 15 folding
+foldminlines, 15 folding
+commentstring, 15 folding
+foldmethod, 15 folding
+foldexpr, 15 folding
+foldignore, 15 folding
+foldmarker, 15 folding
+foldnestmax, 15 folding
+diff, 16 diff mode
+diffopt, 16 diff mode
+diffexpr, 16 diff mode
+patchexpr, 16 diff mode
+maxmapdepth, 17 mapping
+remap, 17 mapping
+timeout, 17 mapping
+ttimeout, 17 mapping
+timeoutlen, 17 mapping
+ttimeoutlen, 17 mapping
+modeline, 18 reading and writing files
+modelineexpr, 18 reading and writing files
+modelines, 18 reading and writing files
+binary, 18 reading and writing files
+endofline, 18 reading and writing files
+fixendofline, 18 reading and writing files
+bomb, 18 reading and writing files
+fileformat, 18 reading and writing files
+fileformats, 18 reading and writing files
+write, 18 reading and writing files
+writebackup, 18 reading and writing files
+backup, 18 reading and writing files
+backupskip, 18 reading and writing files
+backupcopy, 18 reading and writing files
+backupdir, 18 reading and writing files
+backupext, 18 reading and writing files
+autowrite, 18 reading and writing files
+autowriteall, 18 reading and writing files
+writeany, 18 reading and writing files
+autoread, 18 reading and writing files
+patchmode, 18 reading and writing files
+fsync, 18 reading and writing files
+directory, 19 the swap file
+swapfile, 19 the swap file
+updatecount, 19 the swap file
+updatetime, 19 the swap file
+history, 20 command line editing
+wildchar, 20 command line editing
+wildcharm, 20 command line editing
+wildmode, 20 command line editing
+suffixes, 20 command line editing
+suffixesadd, 20 command line editing
+wildignore, 20 command line editing
+fileignorecase, 20 command line editing
+wildignorecase, 20 command line editing
+wildmenu, 20 command line editing
+cedit, 20 command line editing
+cmdwinheight, 20 command line editing
+shell, 21 executing external commands
+shellquote, 21 executing external commands
+shellxquote, 21 executing external commands
+shellxescape, 21 executing external commands
+shellcmdflag, 21 executing external commands
+shellredir, 21 executing external commands
+shelltemp, 21 executing external commands
+equalprg, 21 executing external commands
+formatprg, 21 executing external commands
+keywordprg, 21 executing external commands
+warn, 21 executing external commands
+errorfile, 22 running make and jumping to errors (quickfix)
+errorformat, 22 running make and jumping to errors (quickfix)
+makeprg, 22 running make and jumping to errors (quickfix)
+shellpipe, 22 running make and jumping to errors (quickfix)
+makeef, 22 running make and jumping to errors (quickfix)
+grepprg, 22 running make and jumping to errors (quickfix)
+grepformat, 22 running make and jumping to errors (quickfix)
+makeencoding, 22 running make and jumping to errors (quickfix)
+shellslash, 23 system specific
+completeslash, 23 system specific
+isfname, 24 language specific
+isident, 24 language specific
+iskeyword, 24 language specific
+isprint, 24 language specific
+quoteescape, 24 language specific
+rightleft, 24 language specific
+rightleftcmd, 24 language specific
+revins, 24 language specific
+allowrevins, 24 language specific
+aleph, 24 language specific
+hkmap, 24 language specific
+hkmapp, 24 language specific
+arabic, 24 language specific
+arabicshape, 24 language specific
+termbidi, 24 language specific
+keymap, 24 language specific
+langmap, 24 language specific
+langremap, 24 language specific
+iminsert, 24 language specific
+imsearch, 24 language specific
+encoding, 25 multi-byte characters
+fileencoding, 25 multi-byte characters
+fileencodings, 25 multi-byte characters
+charconvert, 25 multi-byte characters
+delcombine, 25 multi-byte characters
+maxcombine, 25 multi-byte characters
+ambiwidth, 25 multi-byte characters
+emoji, 25 multi-byte characters
+virtualedit, 26 various
+eventignore, 26 various
+loadplugins, 26 various
+exrc, 26 various
+secure, 26 various
+gdefault, 26 various
+maxfuncdepth, 26 various
+sessionoptions, 26 various
+viewoptions, 26 various
+viewdir, 26 various
+viminfo, 26 various
+bufhidden, 26 various
+buftype, 26 various
+buflisted, 26 various
+debug, 26 various
+signcolumn, 26 various
+pyxversion, 26 various

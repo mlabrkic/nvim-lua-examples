@@ -1,0 +1,285 @@
+03sortNeovim-options-survey_groups.lua
+-->
+------------------------------------------------------------
+helpfile,"C:\\UTILS\\Neovim\\share\\nvim\\runtime\\doc\\help.txt", 1 important
+packpath,"C:\\Users\\<username>\\AppData\\Local\\nvim,C:\\Users\\<username>\\AppData\\Local\\nvim-data\\site,C:\\UTILS\\Neovim\\share\\nvim\\runtime,C:\\UTILS\\Neovim\\lib\\nvim,C:\\Users\\<username>\\AppData\\Local\\nvim-data\\site\\after,C:\\Users\\<username>\\AppData\\Local\\nvim\\after", 1 important
+paste,false, 1 important
+pastetoggle,"", 1 important
+compatible,false, 1 important
+sections,"SHNHH HUnhsh", 2 moving around
+casemap,"internal,keepascii", 2 moving around
+cdhome,false, 2 moving around
+maxmempattern,1000, 2 moving around
+cdpath,",,", 2 moving around
+define,"^\\s*#\\s*define", 2 moving around
+startofline,false, 2 moving around
+magic,true, 2 moving around
+regexpengine,0, 2 moving around
+paragraphs,"IPLPPPQPP TPHPLIPpLpItpplpipbp", 2 moving around
+includeexpr,"", 2 moving around
+incsearch,true, 2 moving around
+path,".,/usr/include,,", 2 moving around
+wrapscan,true, 2 moving around
+include,"^\\s*#\\s*include", 2 moving around
+autochdir,false, 2 moving around
+cscopetag,false, 3 tags
+tagbsearch,true, 3 tags
+tagcase,"followic", 3 tags
+tagfunc,"", 3 tags
+cscoperelative,false, 3 tags
+cscopequickfix,"", 3 tags
+tagstack,true, 3 tags
+tags,"./tags;,tags", 3 tags
+taglength,0, 3 tags
+tagrelative,true, 3 tags
+cscopetagorder,0, 3 tags
+cscopepathcomp,0, 3 tags
+showfulltag,false, 3 tags
+cscopeprg,"cscope", 3 tags
+cscopeverbose,true, 3 tags
+numberwidth,4, 4 displaying text
+display,"lastline,msgsep", 4 displaying text
+linebreak,false, 4 displaying text
+redrawtime,2000, 4 displaying text
+fillchars,"", 4 displaying text
+showbreak,"", 4 displaying text
+scrolloff,0, 4 displaying text
+sidescroll,1, 4 displaying text
+sidescrolloff,0, 4 displaying text
+writedelay,0, 4 displaying text
+breakindentopt,"", 4 displaying text
+breakat," \t!@*-+;:,./?", 4 displaying text
+wrap,true, 4 displaying text
+cmdheight,1, 4 displaying text
+concealcursor,"", 4 displaying text
+conceallevel,0, 4 displaying text
+spellsuggest,"best", 5 syntax
+spelloptions,"", 5 syntax
+spelllang,"en", 5 syntax
+spellfile,"", 5 syntax
+spellcapcheck,"[.?!]\\_[\\])'\"\t ]\\+", 5 syntax
+hlsearch,true, 5 syntax
+background,"dark", 5 syntax
+highlight,"8:SpecialKey,~:EndOfBuffer,z:TermCursor,Z:TermCursorNC,@:NonText,d:Directory,e:ErrorMsg,i:IncSearch,l:Search,y:CurSearch,m:MoreMsg,M:ModeMsg,n:LineNr,a:LineNrAbove,b:LineNrBelow,N:CursorLineNr,G:CursorLineSign,O:CursorLineFoldr:Question,s:StatusLine,S:StatusLineNC,c:VertSplit,t:Title,v:Visual,V:VisualNOS,w:WarningMsg,W:WildMenu,f:Folded,F:FoldColumn,A:DiffAdd,C:DiffChange,D:DiffDelete,T:DiffText,>:SignColumn,-:Conceal,B:SpellBad,P:SpellCap,R:SpellRare,L:SpellLocal,+:Pmenu,=:PmenuSel,x:PmenuSbar,X:PmenuThumb,*:TabLine,#:TabLineSel,_:TabLineFill,!:CursorColumn,.:CursorLine,o:ColorColumn,q:QuickFixLine,0:Whitespace,I:NormalNC", 5 syntax
+synmaxcol,3000, 5 syntax
+cursorcolumn,false, 5 syntax
+cursorlineopt,"both", 5 syntax
+spell,false, 5 syntax
+syntax,"", 5 syntax
+colorcolumn,"", 5 syntax
+mkspellmem,"460000,2000,500", 5 syntax
+filetype,"", 5 syntax
+helpheight,20, 6 multiple windows
+previewwindow,false, 6 multiple windows
+hidden,true, 6 multiple windows
+winfixheight,false, 6 multiple windows
+previewheight,12, 6 multiple windows
+winfixwidth,false, 6 multiple windows
+winminheight,1, 6 multiple windows
+winheight,1, 6 multiple windows
+winwidth,20, 6 multiple windows
+switchbuf,"uselast", 6 multiple windows
+cursorbind,false, 6 multiple windows
+laststatus,2, 6 multiple windows
+equalalways,true, 6 multiple windows
+winminwidth,1, 6 multiple windows
+splitbelow,false, 6 multiple windows
+splitright,false, 6 multiple windows
+eadirection,"both", 6 multiple windows
+scrollopt,"ver,jump", 6 multiple windows
+scrollbind,false, 6 multiple windows
+tabpagemax,50, 7 multiple tab pages
+titlestring,"", 8 terminal
+titleold,"", 8 terminal
+iconstring,"", 8 terminal
+guicursor,"n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20", 8 terminal
+scrolljump,1, 8 terminal
+title,false, 8 terminal
+titlelen,85, 8 terminal
+icon,false, 8 terminal
+mousetime,500, 9 using the mouse
+mousemodel,"popup_setpos", 9 using the mouse
+printdevice,"", 10 printing
+printencoding,"hp-roman8", 10 printing
+printexpr,"system(['copy', v:fname_in, empty(&printdevice)?'LPT1':&printdevice]). delete(v:fname_in)", 10 printing
+printfont,"courier", 10 printing
+printmbcharset,"", 10 printing
+printmbfont,"", 10 printing
+printoptions,"", 10 printing
+printheader,"%<%f%h%m%=Page %N", 10 printing
+more,true, 11 messages and info
+terse,false, 11 messages and info
+errorbells,false, 11 messages and info
+showcmd,true, 11 messages and info
+visualbell,false, 11 messages and info
+shortmess,"filnxtToOF", 11 messages and info
+report,2, 11 messages and info
+rulerformat,"", 11 messages and info
+confirm,false, 11 messages and info
+ruler,true, 11 messages and info
+verbosefile,"", 11 messages and info
+verbose,0, 11 messages and info
+belloff,"all", 11 messages and info
+selectmode,"", 12 selecting text
+selection,"inclusive", 12 selecting text
+keymodel,"", 12 selecting text
+clipboard,"", 12 selecting text
+modified,false, 13 editing text
+modifiable,true, 13 editing text
+wrapmargin,0, 13 editing text
+undoreload,10000, 13 editing text
+textwidth,0, 13 editing text
+omnifunc,"", 13 editing text
+pumheight,0, 13 editing text
+undodir,"C:\\Users\\<username>\\AppData\\Local\\nvim-data\\undo\\\\", 13 editing text
+nrformats,"bin,hex", 13 editing text
+pumwidth,15, 13 editing text
+tildeop,false, 13 editing text
+readonly,false, 13 editing text
+thesaurus,"", 13 editing text
+undolevels,1000, 13 editing text
+matchtime,5, 13 editing text
+infercase,false, 13 editing text
+formatlistpat,"^\\s*\\d\\+[\\]:.)}\\t ]\\s*", 13 editing text
+joinspaces,false, 13 editing text
+formatexpr,"", 13 editing text
+dictionary,"", 13 editing text
+backspace,"indent,eol,start", 13 editing text
+completefunc,"", 13 editing text
+digraph,false, 13 editing text
+comments,"s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-", 13 editing text
+complete,".,w,b,u,t", 13 editing text
+smarttab,true, 14 tabs and indenting
+smartindent,false, 14 tabs and indenting
+copyindent,false, 14 tabs and indenting
+indentexpr,"", 14 tabs and indenting
+autoindent,true, 14 tabs and indenting
+cinscopedecls,"public,protected,private", 14 tabs and indenting
+cinoptions,"", 14 tabs and indenting
+preserveindent,false, 14 tabs and indenting
+shiftround,false, 14 tabs and indenting
+varsofttabstop,"", 14 tabs and indenting
+cindent,false, 14 tabs and indenting
+vartabstop,"", 14 tabs and indenting
+lisp,false, 14 tabs and indenting
+lispwords,"defun,define,defmacro,set!,lambda,if,case,let,flet,let*,letrec,do,do*,define-syntax,let-syntax,letrec-syntax,destructuring-bind,defpackage,defparameter,defstruct,deftype,defvar,do-all-symbols,do-external-symbols,do-symbols,dolist,dotimes,ecase,etypecase,eval-when,labels,macrolet,multiple-value-bind,multiple-value-call,multiple-value-prog1,multiple-value-setq,prog1,progv,typecase,unless,unwind-protect,when,with-input-from-string,with-open-file,with-open-stream,with-output-to-string,with-package-iterator,define-condition,handler-bind,handler-case,restart-bind,restart-case,with-simple-restart,store-value,use-value,muffle-warning,abort,continue,with-slots,with-slots*,with-accessors,with-accessors*,defclass,defmethod,print-unreadable-object", 14 tabs and indenting
+cinwords,"if,else,while,do,for,switch", 14 tabs and indenting
+cinkeys,"0{,0},0),0],:,0#,!^F,o,O,e", 14 tabs and indenting
+foldmethod,"manual", 15 folding
+foldexpr,"0", 15 folding
+foldlevelstart,-1, 15 folding
+foldcolumn,"0", 15 folding
+foldclose,"", 15 folding
+foldmarker,"{{{,}}}", 15 folding
+foldenable,true, 15 folding
+foldlevel,0, 15 folding
+foldignore,"#", 15 folding
+foldnestmax,20, 15 folding
+foldminlines,1, 15 folding
+foldtext,"foldtext()", 15 folding
+foldopen,"block,hor,mark,percent,quickfix,search,tag,undo", 15 folding
+commentstring,"/*%s*/", 15 folding
+diff,false, 16 diff mode
+patchexpr,"", 16 diff mode
+diffopt,"internal,filler,closeoff", 16 diff mode
+diffexpr,"", 16 diff mode
+timeoutlen,1000, 17 mapping
+maxmapdepth,1000, 17 mapping
+timeout,true, 17 mapping
+ttimeoutlen,50, 17 mapping
+ttimeout,true, 17 mapping
+remap,true, 17 mapping
+write,true, 18 reading and writing files
+binary,false, 18 reading and writing files
+writebackup,true, 18 reading and writing files
+endofline,true, 18 reading and writing files
+writeany,false, 18 reading and writing files
+backupext,"~", 18 reading and writing files
+backupskip,"C:\\Users\\<username>\\AppData\\Local\\Temp\\*", 18 reading and writing files
+fileformat,"dos", 18 reading and writing files
+fileformats,"dos,unix", 18 reading and writing files
+modelineexpr,false, 18 reading and writing files
+backup,false, 18 reading and writing files
+backupdir,".,C:\\Users\\<username>\\AppData\\Local\\nvim-data\\backup\\\\", 18 reading and writing files
+patchmode,"", 18 reading and writing files
+fsync,false, 18 reading and writing files
+bomb,false, 18 reading and writing files
+autowriteall,false, 18 reading and writing files
+backupcopy,"auto", 18 reading and writing files
+autowrite,false, 18 reading and writing files
+modelines,5, 18 reading and writing files
+fixendofline,true, 18 reading and writing files
+autoread,true, 18 reading and writing files
+updatecount,200, 19 the swap file
+directory,"C:\\Users\\<username>\\AppData\\Local\\nvim-data\\swap\\\\", 19 the swap file
+suffixesadd,"", 20 command line editing
+cmdwinheight,7, 20 command line editing
+suffixes,".bak,~,.o,.h,.info,.swp,.obj", 20 command line editing
+cedit,"\6", 20 command line editing
+wildchar,9, 20 command line editing
+fileignorecase,true, 20 command line editing
+wildignore,"", 20 command line editing
+wildcharm,0, 20 command line editing
+wildignorecase,false, 20 command line editing
+history,10000, 20 command line editing
+wildmode,"full", 20 command line editing
+wildmenu,true, 20 command line editing
+warn,true, 21 executing external commands
+keywordprg,":Man", 21 executing external commands
+formatprg,"", 21 executing external commands
+shell,"cmd.exe", 21 executing external commands
+equalprg,"", 21 executing external commands
+shellxquote,'"', 21 executing external commands
+shellxescape,"", 21 executing external commands
+shelltemp,true, 21 executing external commands
+shellquote,"", 21 executing external commands
+shellredir,">%s 2>&1", 21 executing external commands
+shellcmdflag,"/s /c", 21 executing external commands
+errorformat,'%f(%l) \\=: %t%*\\D%n: %m,%*[^"]"%f"%*\\D%l: %m,%f(%l) \\=: %m,%*[^ ] %f %l: %m,%f:%l:%c:%m,%f(%l):%m,%f:%l:%m,%f|%l| %m', 22 running make and jumping to errors (quickfix)
+makeprg,"make", 22 running make and jumping to errors (quickfix)
+makeef,"", 22 running make and jumping to errors (quickfix)
+shellpipe,">%s 2>&1", 22 running make and jumping to errors (quickfix)
+makeencoding,"", 22 running make and jumping to errors (quickfix)
+errorfile,"errors.err", 22 running make and jumping to errors (quickfix)
+shellslash,false, 23 system specific
+completeslash,"", 23 system specific
+arabicshape,true, 24 language specific
+arabic,false, 24 language specific
+allowrevins,false, 24 language specific
+aleph,224, 24 language specific
+quoteescape,"\\", 24 language specific
+rightleft,false, 24 language specific
+revins,false, 24 language specific
+keymap,"", 24 language specific
+langmap,"", 24 language specific
+imsearch,-1, 24 language specific
+isprint,"@,161-255", 24 language specific
+hkmap,false, 24 language specific
+isident,"@,48-57,_,128-167,224-235", 24 language specific
+iminsert,0, 24 language specific
+hkmapp,false, 24 language specific
+rightleftcmd,"search", 24 language specific
+langremap,false, 24 language specific
+isfname,"@,48-57,/,\\,.,-,_,+,,,#,$,%,{,},[,],:,@-@,!,~,=", 24 language specific
+termbidi,false, 24 language specific
+delcombine,false, 25 multi-byte characters
+maxcombine,6, 25 multi-byte characters
+emoji,true, 25 multi-byte characters
+ambiwidth,"single", 25 multi-byte characters
+encoding,"utf-8", 25 multi-byte characters
+fileencodings,"ucs-bom,utf-8,default,latin1", 25 multi-byte characters
+fileencoding,"", 25 multi-byte characters
+charconvert,"", 25 multi-byte characters
+maxfuncdepth,100, 26 various
+loadplugins,true, 26 various
+buflisted,true, 26 various
+pyxversion,3, 26 various
+sessionoptions,"blank,buffers,curdir,folds,help,tabpages,winsize,terminal", 26 various
+eventignore,"", 26 various
+debug,"", 26 various
+gdefault,false, 26 various
+secure,false, 26 various
+viewoptions,"folds,cursor,curdir", 26 various
+viewdir,"C:\\Users\\<username>\\AppData\\Local\\nvim-data\\view\\\\", 26 various
+virtualedit,"", 26 various
+exrc,false, 26 various
