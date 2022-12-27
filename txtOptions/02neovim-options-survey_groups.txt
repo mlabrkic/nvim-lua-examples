@@ -1,4 +1,4 @@
-02neovim-options-survey_groups.lua
+opt02_nvim-opt-surv_gr.lua
 -->
 ------------------------------------------------------------
 aleph,224, 24 language specific

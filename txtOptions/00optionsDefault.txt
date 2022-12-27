@@ -1,4 +1,4 @@
-00neovim-options-survey.lua
+opt00_nvim-opt-survey.lua
 -->
 ------------------------------------------------------------
 aleph,224

@@ -1,4 +1,4 @@
-03sortNeovim-options-survey_groups.lua
+opt03_sort_nvim-opt-surv_gr.lua
 -->
 ------------------------------------------------------------
 helpfile,"C:\\UTILS\\Neovim\\share\\nvim\\runtime\\doc\\help.txt", 1 important
