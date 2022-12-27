@@ -1,0 +1,67 @@
+date: 2022-12M-15 17:09:23
+
+------------------------------------------------------------
+My notes (Vim):
+------------------------------------------------------------
+
+Command-line
+:
+
+h[elp]
+h helphelp
+
+---------------
+h eval.txt
+-->
+h string
+h expression-commands
+
+---------------
+h usr_41.txt
+-->
+h function-list
+(Vimscript)
+
+---------------
+h insert.txt
+h i_CTRL-R
+
+h cmdline.txt
+h c_CTRL-R
+
+---------------
+h change.txt
+
+h d
+h cw
+h CTRL-A
+h v_u
+
+---------------
+h visual.txt
+
+Visual mode
+h V
+
+h visual-search
+:vmap X y/<C-R>"<CR>
+
+------------------------------
+h motion.txt
+
+h ^
+h gm
+
+---------------
+h CTRL-I
+
+^	Letters preceded by a caret (^) are control characters.
+For example:	"^F" is CTRL-F.
+
+"^I"
+CTRL-I
+<Tab>
+
+------------------------------------------------------------
+
+
