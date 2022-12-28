@@ -120,24 +120,36 @@ h buffers
 Lua Quick Guide -
 https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb
 
-h luaref-patterns
-- `%a`  represents all letters.
-- `%d`  represents all digits.
--- %A represents all non-letter characters.
-
-------------------------------------------------------------
-
---[[
-Lua Quick Guide -
-https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb
-
 Lua_Quick_Guide.pdf
 
 2.3 Pattern Matching
 string.match(line1, '^.%d')
 
+h luaref-patterns
+- `%a`  represents all letters.
+- `%d`  represents all digits.
+-- %A represents all non-letter characters.
+
+------------------------------
+Tables
 -->
 4.3 Other Table Methods
+
+Sort list elements in a given order, in-place.
+If "comp" is given, then it must be a function that receives two list elements and
+returns "true" when the first element must come before the second in the final order.
+If "comp" is not given, then the standard Lua operator < is used instead.
+
+local T = {"John", "Mary", "Thomas"}
+
+-- create a comparison function to sort according to the second letter
+local function comp(s1, s2)
+    return string.sub(s1,2,2) > string.sub(s2,2,2)
+end
+
+-- sort the table according to this function
+table.sort(T, comp) --> T = {John, Thomas, Mary}
+
 ]]
 ------------------------------------------------------------
 
@@ -150,27 +162,26 @@ A.nvim_buf_set_name(bufnr, '03sortNeovim-options-survey_groups.txt')  -- Assign 
 A.nvim_buf_set_option(bufnr, 'buftype', '')  -- set buftype="" (because I want to save the file)
 
 ------------------------------
--- local T = {"John", "Mary", "Thomas"}
--- local T = {"imsearch, 24 language 1 specific", "paste, 1 important 7", "listchars, 4 displaying 2 text"}
--- print(vim.inspect(T))
+--[[
+local T = {"John", "Mary", "Thomas"}
+local T = {"imsearch, 24 language 1 specific", "paste, 1 important 7", "listchars, 4 displaying 2 text"}
+]]
 
+-- Neovim, open "02neovim-options-survey_groups.txt"
 -- The entire buffer is loaded into the table.
--- neovim-options-survey_groups.txt (:ls  --> buf_id=1)
 local myTable = A.nvim_buf_get_lines(0, 0, -1, false)
 
 ------------------------------
 -- create a comparison function to sort according to the second letter
 -- h luaref-tonumber
 local function comp(s1, s2)
-  -- return string.sub(s1,2,2) > string.sub(s2,2,2)
-  -- return string.sub(s1,2,2) < string.sub(s2,2,2)
   -- return string.match(s1, ',%s%d+') < string.match(s2, ',%s%d+')
   return tonumber(string.match(s1, '%s%d+%s')) < tonumber(string.match(s2, '%s%d+%s'))
 end
 
 -- sort the table according to this function
 -- h table.sort
-table.sort(myTable, comp) --> T = {John, Thomas, Mary}
+table.sort(myTable, comp)
 
 ------------------------------
 -- print("After sort:")
