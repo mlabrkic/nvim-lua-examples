@@ -113,12 +113,26 @@ h buffers
 Lua Quick Guide -
 https://github.com/medwatt/Notes/blob/main/Lua/Lua_Quick_Guide.ipynb
 
+Lua_Quick_Guide.pdf
+
+2.3 Pattern Matching
+string.match(line1, '^.%d')
+
 h luaref-patterns
 - `%a`  represents all letters.
 - `%d`  represents all digits.
 -- %A represents all non-letter characters.
 
-------------------------------------------------------------
+------------------------------
+5.5 Variable Number of Arguements
+
+-- `_` is a placeholder for a variable whose value we don't care about
+
+for _, value in ipairs(arg) do
+  sum = sum + value
+end
+
+------------------------------
 h luaref-pairs
 
 for k,v in pairs(t) do
@@ -175,12 +189,12 @@ arabic,false
 local lines = { '---Start---' }
 local option_lines = {}
 
-for k,line in pairs(myTable) do
+for _,line in pairs(myTable) do
 
   local words = vim.split(line, ",")
   local firstWord = words[1]
 
-  for k1,line1 in pairs(myTable1) do
+  for _,line1 in pairs(myTable1) do
     local words1 = vim.split(line1, ", ")
     local firstWord1 = words1[1]
     if (firstWord == firstWord1) then
