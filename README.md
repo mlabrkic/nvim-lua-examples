@@ -1,1 +1,1 @@
-# nvim-lua-examples
+# neovim-lua-example-scripts
