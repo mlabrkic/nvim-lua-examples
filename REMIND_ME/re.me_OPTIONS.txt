@@ -1,0 +1,393 @@
+REMIND_ME
+date: 2025-01M-10 10:26:06
+------------------------------------------------------------
+NOTE: 1 (h options)
+
+h options
+Setting options
+(For an overview of options see quickref.txt |option-list|. ==> NOTE 2)
+
+==>
+WARN:
+h option-summary
+3. Options summary
+
+------------------------------
+Type |gO| to see the table of contents.
+
+doc\options.txt|20| 1. Setting options
+h options
+
+doc\options.txt|463| 2. Automatically setting options
+h auto-setting
+:463
+Besides changing options with the ":set" command, you can set options
+automatically in various ways:...
+
+doc\options.txt|591| 3. Options summary
+h option-summary
+:591
+In the list below all the options are mentioned with their full name and with
+an abbreviation if there is one.  Both forms may be used.
+
+------------------------------
+WARN:
+h set-option
+1. Setting options
+
+----------
+h :set
+The {option} arguments to ":set" may be repeated.  For example: >
+:set ai nosi sw=3 ts=3
+
+h :set-args
+h :set+=
+h :set^=
+h :set-=
+
+h :set-verbose
+When 'verbose' is non-zero, displaying an option value will also tell where it
+was last set.
+
+----------
+h option-backslash
+
+To include white space in a string option value it has to be preceded with a
+backslash.  To include a backslash you have to use two.
+:set makeprg=make\ file
+results in "make file"
+
+This sets the 'titlestring' option to "hi" and 'iconstring' to "there": >
+:set titlestring=hi|set iconstring=there
+
+----------
+Some options are a list of flags.
+
+h add-option-flags
+:set guioptions+=a
+
+h remove-option-flags
+:set guioptions-=a
+
+----------
+h :set_env
+:set path=/usr/$INCLUDE,$HOME/include,.
+
+h local-options
+Some of the options only apply to a window or buffer.
+
+h :setlocal
+
+h :setglobal
+Like ":set" but set only the global value for a local
+option without changing the local value.
+
+----------
+h option-value-function
+
+Some options ('completefunc', 'omnifunc', 'operatorfunc', 'quickfixtextfunc',
+'tagfunc' and 'thesaurusfunc') are set to a function name or a function
+reference or a lambda function.  When using a lambda it will be converted to
+the name, e.g. "<lambda>123".  Examples:
+
+set opfunc=MyOpFunc
+set opfunc=function('MyOpFunc')
+
+----------
+h :setfiletype
+
+----------
+h option-window
+h optwin
+
+Open a window for viewing and setting all options.
+Options are grouped by function.
+:set-browse
+:browse-set
+:opt
+:options
+
+----------
+h $HOME
+
+Using "~" is like using "$HOME", but it is only recognized at the start of an
+option and after a space or comma.
+WARN: expanding environment variables and "~/" is only done with the ":set"
+command, not when assigning a value to an option with ":let".
+
+Linux:
+echo luaeval('os.getenv("HOME")')
+
+Windows:
+echo luaeval('os.getenv("USERPROFILE")')
+
+----------
+
+------------------------------------------------------------
+NOTE: 2 (h option-list)
+
+For an overview of options see quickref.txt |option-list|.
+
+h quickref.txt
+Quick reference guide
+
+==>
+--------------------
+Q_op
+Options
+
+WARN:
+h option-list
+Short explanation of each option.
+
+------------------------------------------------------------
+NOTE: 3 (h option-window)
+
+h option-window
+or
+h optwin
+
+Open a window for viewing and setting all options.
+Options are grouped by function.
+:opt
+:options
+
+WARN:
+:options
+Neovim\share\nvim\runtime\optwin.vim
+--> "option-window" :
+
+------------------------------------------------------------
+NOTE: 4 (h vim_diff.txt)
+
+h vim_diff.txt
+Differences between Nvim and Vim
+
+doc\vim_diff.txt|16| Configuration
+doc\vim_diff.txt|27| Defaults
+doc\vim_diff.txt|102|   DEFAULT MOUSE
+doc\vim_diff.txt|126|   DEFAULT MAPPINGS
+doc\vim_diff.txt|148|   DEFAULT AUTOCOMMANDS
+doc\vim_diff.txt|173| New Features
+doc\vim_diff.txt|175|   MAJOR COMPONENTS
+doc\vim_diff.txt|194|   USER EXPERIENCE
+doc\vim_diff.txt|226|   ARCHITECTURE
+doc\vim_diff.txt|242|   FEATURES
+doc\vim_diff.txt|379|   TUI:
+doc\vim_diff.txt|415| Upstreamed features
+doc\vim_diff.txt|430| Other changes
+doc\vim_diff.txt|588| Missing features
+doc\vim_diff.txt|598| Removed legacy features
+doc\vim_diff.txt|822|   TUI:
+
+--------------------
+WARN:
+
+h nvim-defaults
+doc\vim_diff.txt|27| Defaults
+
+h default-mappings
+doc\vim_diff.txt|126|   DEFAULT MAPPINGS
+
+h default-autocmds
+doc\vim_diff.txt|148|   DEFAULT AUTOCOMMANDS
+
+----------
+h nvim-features
+doc\vim_diff.txt|173| New Features
+
+MAJOR COMPONENTS
+
+- API                             |API|
+- Job control                     |job-control|
+- LSP framework                   |lsp|
+- Lua scripting                   |lua|
+- Parsing engine                  |treesitter|
+- Providers
+  - Clipboard                     |provider-clipboard|
+  - Node.js plugins               |provider-nodejs|
+  - Python plugins                |provider-python|
+  - Ruby plugins                  |provider-ruby|
+- Remote plugins                  |remote-plugin|
+- Shared data                     |shada|
+- Terminal emulator               |terminal|
+- UI                              |ui| |--listen| |--server|
+- Vimscript parser                |nvim_parse_expression()|
+- XDG base directories            |xdg|
+
+----------
+h api.txt
+==>
+h nvim_get_current_line()
+
+:lua print(vim.api.nvim_get_current_line())
+
+Paste:
+i (go to Isert Mode)
+CTRL-R
+:
+
+----------
+h lsp.txt
+==>
+LSP client/framework
+Nvim provides an LSP client, but the servers are provided by third parties.
+
+:lua =vim.lsp.get_clients()[1].server_capabilities
+h lsp-buf
+
+----------
+doc\vim_diff.txt|194|   USER EXPERIENCE
+
+WARN:
+h starting.txt
+
+h cli-arguments
+- Various "nvim" |cli-arguments| were redesigned.
+
+h $NVIM_APPNAME
+
+----------
+doc\vim_diff.txt|242|   FEATURES
+
+Commands:
+- |:checkhealth|
+- |:drop| is always available
+- |:Man| is available by default, with many improvements such as completion
+- |:match| can be invoked before highlight group is defined
+- |:source| works with Lua
+  User commands can support |:command-preview| to show results as you type
+- |:write| with "++p" flag creates parent directories.
+
+----------
+Normal commands:
+- |gO| shows a filetype-defined "outline" of the current buffer.
+- |Q| replays the last recorded macro instead of switching to Ex mode (|gQ|).
+
+----------
+doc\vim_diff.txt|430| Other changes
+
+Lua interface (|lua.txt|):
+C:\UTILS\Neovim\share\nvim\runtime\doc\lua.txt
+
+- Lua has direct access to Nvim |API| via `vim.api`.
+h vim.api
+
+------------------------------------------------------------
+NOTE: 5 (h lua-guide)
+
+h lua-guide.txt
+Guide to using Lua in Nvim
+
+----------
+h lua-guide-variables
+doc\lua-guide.txt|245| Variables
+
+• |vim.g|:   global variables (|g:|)
+• |vim.b|:   variables for the current buffer (|b:|)
+• |vim.w|:   variables for the current window (|w:|)
+• |vim.t|:   variables for the current tabpage (|t:|)
+• |vim.v|:   predefined Vim variables (|v:|)
+• |vim.env|: environment variables defined in the editor session
+
+----------
+WARN:
+h lua-guide-options
+doc\lua-guide.txt|302| Options
+
+----------
+vim.o
+:357
+
+• |vim.o|:  behaves like |:set|
+• |vim.go|: behaves like |:setglobal|
+• |vim.bo|: for buffer-scoped options
+• |vim.wo|: for window-scoped options (can be double indexed)
+
+vim.o.smarttab = false
+-- :set nosmarttab
+:lua print(vim.o.smarttab)
+--> false
+
+vim.o.listchars = 'space:_,tab:>~'
+-- :set listchars='space:_,tab:>~'
+:lua print(vim.o.listchars)
+--> 'space:_,tab:>~'
+
+vim.o.isfname = vim.o.isfname .. ',@-@'
+-- :set isfname+=@-@
+:lua print(vim.o.isfname)
+--> '@,48-57,/,.,-,_,+,,,#,$,%,~,=,@-@'
+
+vim.bo.shiftwidth = 4
+-- :setlocal shiftwidth=4
+:lua print(vim.bo.shiftwidth)
+--> 4
+
+----------
+
+------------------------------------------------------------
+NOTE: 6 (h vim.o)
+
+h nvim-defaults
+
+h vim.o
+-- local o = vim.o -- for conciseness
+
+------------------------------
+https://github.com/neovim/neovim/issues/20107
+vim.o (bo/wo/go) works with tables (meta accessors), deprecate vim.opt #20107
+opened on Sep 7, 2022 · edited by clason
+
+------------------------------
+WARN: 1
+1. For flaglists:
+(Some options are a list of flags.)
+
+h cpoptions
+string
+(default "aABceFs_")
+
+-- vim.opt.cpoptions:remove({ "a" })
+vim.cmd([[set cpoptions-=a]]) -- template support
+
+------------------------------
+WARN: 2
+2. For commalists:
+
+h iskeyword
+string
+(default "@,48-57,_,192-255")
+
+-- vim.opt.iskeyword:append("-")
+-- vim.o.iskeyword = vim.o.iskeyword .. ",-"
+vim.cmd([[set iskeyword+=-]])
+
+------------------------------
+WARN: 3
+3. For dictionary options:
+
+h listchars
+string
+(default "tab:> ,trail:-,nbsp:+")
+
+-- vim.opt.listchars = { tab = "▸\\ ", extends = "❯", precedes = "❮", trail = "⣿", nbsp = "±" }
+-- vim.o.listchars = "tab:>~,trail:⣿,eol:<"
+vim.o.listchars = "tab:>~,trail:⣿"
+
+------------------------------
+WARN: 4
+4. boolean, number, string
+
+displaying text:
+
+vim.o.wrap = true
+vim.o.showbreak = "↪" -- Character to show before the lines that have been soft-wrapped
+
+------------------------------
+--[[
+
+]]
+
+------------------------------------------------------------
+

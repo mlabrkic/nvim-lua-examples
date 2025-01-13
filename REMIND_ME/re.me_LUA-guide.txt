@@ -1,0 +1,129 @@
+date: 2025-01M-10 17:14:19
+------------------------------------------------------------
+NOTE: 1 (h lua-guide)
+
+h lua-guide.txt
+Guide to using Lua in Nvim
+
+C:\UTILS\Neovim\share\nvim\runtime\doc\lua-guide.txt
+
+------------------------------
+h lua-guide
+doc\lua-guide.txt|11| Introduction
+
+----------
+h lua-guide-using-Lua
+doc\lua-guide.txt|59| Using Lua
+
+:lua print("Hello!")
+
+Note: each |:lua| command has its own scope and variables declared with the
+local keyword are not accessible outside of the command.
+
+This won't work:
+>vim
+:lua local foo = 1
+:lua print(foo)
+" prints "nil" instead of "1"
+<
+
+You can also use `:lua=`, which is equivalent to `:lua vim.print(...)`, to
+conveniently check the value of a variable or a table:
+>vim
+:lua =package
+
+----------
+WARN:
+h lua-guide-modules
+:105
+
+----------
+h lua-guide-vimscript
+doc\lua-guide.txt|174| Using Vim commands and functions from Lua
+
+All Vim commands and functions are accessible from Lua.
+vim.cmd("colorscheme habamax")
+vim.cmd([[%s/\Vfoo/bar/g]])
+
+vim.cmd([[
+  highlight Error guibg=red
+  highlight link Warning Error
+]])
+
+vim.cmd.colorscheme("habamax")
+
+----------
+h lua-guide-vim-functions
+:213
+
+Use |vim.fn| to call Vimscript functions from Lua. Data types between Lua and
+Vimscript are automatically converted:
+>lua
+print(vim.fn.printf('Hello from %s', 'Lua'))
+
+----------
+------------------------------------------------------------
+NOTE: 2 (h lua-guide-variables)
+
+h lua-guide-variables
+doc\lua-guide.txt|245| Variables
+
+• |vim.g|:   global variables (|g:|)
+• |vim.b|:   variables for the current buffer (|b:|)
+• |vim.w|:   variables for the current window (|w:|)
+• |vim.t|:   variables for the current tabpage (|t:|)
+• |vim.v|:   predefined Vim variables (|v:|)
+• |vim.env|: environment variables defined in the editor session
+
+----------
+WARN:
+h lua-guide-options
+doc\lua-guide.txt|302| Options
+
+----------
+vim.o
+:357
+
+• |vim.o|:  behaves like |:set|
+• |vim.go|: behaves like |:setglobal|
+• |vim.bo|: for buffer-scoped options
+• |vim.wo|: for window-scoped options (can be double indexed)
+
+vim.o.smarttab = false
+-- :set nosmarttab
+print(vim.o.smarttab)
+--> false
+
+vim.o.listchars = 'space:_,tab:>~'
+-- :set listchars='space:_,tab:>~'
+print(vim.o.listchars)
+--> 'space:_,tab:>~'
+
+vim.o.isfname = vim.o.isfname .. ',@-@'
+-- :set isfname+=@-@
+print(vim.o.isfname)
+--> '@,48-57,/,.,-,_,+,,,#,$,%,~,=,@-@'
+
+vim.bo.shiftwidth = 4
+-- :setlocal shiftwidth=4
+print(vim.bo.shiftwidth)
+--> 4
+
+----------
+WARN:
+h lua-guide-mappings
+doc\lua-guide.txt|399| Mappings
+
+h lua-guide-autocommands
+doc\lua-guide.txt|489| Autocommands
+
+h lua-guide-commands
+doc\lua-guide.txt|663| User commands
+
+Thank you @nanotee!
+https://github.com/nanotee/nvim-lua-guide
+doc\lua-guide.txt|753| Credits
+
+------------------------------------------------------------
+
+

@@ -1,0 +1,201 @@
+date: 2025-01M-10 15:47:37
+
+------------------------------------------------------------
+NOTE: 1 (h lua.txt)
+
+h lua.txt
+Lua engine
+
+C:\UTILS\Neovim\share\nvim\runtime\doc\lua.txt
+
+------------------------------
+h lua-intro
+doc\lua.txt|12| INTRODUCTION
+
+h lua-concepts
+doc\lua.txt|66| LUA CONCEPTS AND IDIOMS
+
+h lua-module-load
+doc\lua.txt|158| IMPORTING LUA MODULES
+
+h lua-commands
+doc\lua.txt|246| COMMANDS
+
+h lua-eval
+doc\lua.txt|326| luaeval()
+
+----------
+h v:lua-call
+doc\lua.txt|397| Vimscript v:lua interface
+
+From Vimscript the special `v:lua` prefix can be used to call Lua functions
+which are global or accessible from global tables.
+
+----------
+WARN:
+h lua-stdlib
+doc\lua.txt|445| Lua standard modules
+
+The Nvim Lua "standard library" (stdlib) is the `vim` module, which exposes
+various functions and sub-modules. It is always loaded, thus `require("vim")`
+is unnecessary.
+
+h vim.deepcopy()
+
+----------
+h vim.uv
+h lua-loop
+doc\lua.txt|479|   VIM.UV
+
+h luvref.txt
+
+local timer = vim.uv.new_timer()
+timer:start(1000, 0, vim.schedule_wrap(function()
+  vim.api.nvim_command('echomsg "test"')
+end))
+
+----------
+h vim.highlight
+doc\lua.txt|606| VIM.HIGHLIGHT
+
+vim.highlight.on_yank({opts})
+
+----------
+h vim.diff
+doc\lua.txt|659| VIM.DIFF
+
+vim.diff({a}, {b}, {opts})
+Run diff on strings {a} and {b}.
+
+----------
+doc\lua.txt|727| VIM.MPACK
+doc\lua.txt|753| VIM.JSON
+doc\lua.txt|793| VIM.BASE64
+doc\lua.txt|815| VIM.SPELL
+
+----------
+WARN:
+h vim.builtin
+doc\lua.txt|847| VIM
+
+h vim.api
+Invokes Nvim |API| function {func} with arguments {...}.
+print(tostring(vim.api.nvim_get_current_line()))
+
+------------------------------------------------------------
+NOTE: 2 (h lua-vimscript)
+
+h lua-vimscript
+doc\lua.txt|1167| LUA-VIMSCRIPT BRIDGE
+
+Nvim Lua provides an interface or "bridge" to Vimscript variables and
+functions, and editor commands and options.
+
+Objects passed over this bridge are COPIED (marshalled).
+
+h vim.fn
+
+h lua-vim-variables
+
+vim.g.foo = 5     -- Set the g:foo Vimscript variable.
+print(vim.g.foo)  -- Get and print the g:foo Vimscript variable.
+vim.g.foo = nil   -- Delete (:unlet) the Vimscript variable.
+vim.b[2].foo = 6  -- Set b:foo for buffer 2
+
+local my_dict = vim.g.my_dict   --
+my_dict.field1 = 'value'        -- Instead do
+vim.g.my_dict = my_dict         --
+
+----------
+WARN:
+h lua-options
+:1260
+
+doc\lua.txt|1268|   Examples:
+
+Vim options can be accessed through |vim.o|, which behaves like Vimscript
+|:set|.
+
+Examples: ~
+
+To set a boolean toggle:
+Vimscript: `set number`
+Lua:       `vim.o.number = true`
+
+To set a string value:
+Vimscript: `set wildignore=*.o,*.a,__pycache__`
+Lua:       `vim.o.wildignore = '*.o,*.a,__pycache__'`
+
+Similarly, there is |vim.bo| and |vim.wo| for setting buffer-scoped and
+window-scoped options.
+
+----------
+WARN:
+h lua-vim
+doc\lua.txt|1495| Lua module: vim
+
+h vim.cmd()
+Executes Vim script commands.
+
+vim.cmd('echo 42')
+
+vim.cmd([[
+  augroup My_group
+    autocmd!
+    autocmd FileType c setlocal cindent
+  augroup END
+]])
+
+vim.cmd('write! myfile.txt')
+vim.cmd('colorscheme blue')
+
+----------
+doc\lua.txt|1840| Lua module: vim.inspector
+doc\lua.txt|2424| Lua module: vim.loader
+doc\lua.txt|2471| Lua module: vim.uri
+doc\lua.txt|2531| Lua module: vim.ui
+doc\lua.txt|2623| Lua module: vim.filetype
+
+doc\lua.txt|2789| Lua module: vim.keymap
+
+----------
+WARN:
+h vim.fs
+doc\lua.txt|2848| Lua module: vim.fs
+
+h vim.fs.joinpath()
+h vim.fs.normalize()
+h vim.fs.parents()
+h vim.fs.root()
+
+-- Find the root of a Python project, starting from file 'main.py'
+vim.fs.root(vim.fs.joinpath(vim.env.PWD, 'main.py'), {'pyproject.toml', 'setup.py' })
+
+-- Find the root of a git repository
+vim.fs.root(0, '.git')
+
+-- Find the parent directory containing any file with a .csproj extension
+vim.fs.root(0, function(name, path)
+  return name:match('%.csproj$') ~= nil
+end)
+
+----------
+WARN:
+h vim.glob
+doc\lua.txt|3051| Lua module: vim.glob
+
+doc\lua.txt|3080| VIM.LPEG
+doc\lua.txt|3479| VIM.RE
+doc\lua.txt|3551| VIM.REGEX
+doc\lua.txt|3594| Lua module: vim.secure
+doc\lua.txt|3635| Lua module: vim.version
+doc\lua.txt|3650|   VERSION RANGE SPEC
+doc\lua.txt|3834| Lua module: vim.iter
+doc\lua.txt|4324| Lua module: vim.snippet
+doc\lua.txt|4390| Lua module: vim.text
+doc\lua.txt|4413| Lua module: tohtml
+
+--------------------
+
+------------------------------------------------------------
+

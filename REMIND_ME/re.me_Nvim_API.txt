@@ -1,0 +1,79 @@
+date: 2025-01M-10 15:55:53
+
+------------------------------------------------------------
+NOTE: 1 (h api.txt)
+
+h api.txt
+Nvim API
+
+Nvim exposes a powerful API that can be used by plugins and external processes
+via |RPC|, |Lua| and Vimscript (|eval-api|).
+
+doc\api.txt|17| API Usage
+doc\api.txt|42|   CONNECTING
+doc\api.txt|96| API Definitions
+doc\api.txt|102|   Basic types
+doc\api.txt|121|   Special types (msgpack EXT)
+doc\api.txt|168| API metadata
+doc\api.txt|221| API contract
+doc\api.txt|255| Global events
+doc\api.txt|268| Buffer update events
+doc\api.txt|337|   EXAMPLE
+doc\api.txt|364|   LUA
+doc\api.txt|395| Buffer highlighting
+doc\api.txt|456| Floating windows
+doc\api.txt|505| Extended marks
+doc\api.txt|585| Global Functions
+doc\api.txt|1606| Vimscript Functions
+doc\api.txt|1763| Command Functions
+doc\api.txt|1974| Options Functions
+doc\api.txt|2063| Buffer Functions
+doc\api.txt|2068|   Unloaded Buffers:
+doc\api.txt|2511| Extmark Functions
+doc\api.txt|2900| Window Functions
+doc\api.txt|3127| Win_config Functions
+doc\api.txt|3330| Tabpage Functions
+doc\api.txt|3403| Autocmd Functions
+doc\api.txt|3626| UI Functions
+
+----------
+-- create the highlight through an extmark
+extid = vim.api.nvim_buf_set_extmark(buf, ns_id, line, col_start, {end_col = col_end, hl_group = hl_group})
+
+-- example: modify the extmark's highlight group
+vim.api.nvim_buf_set_extmark(buf, ns_id, line, col_start, {end_col = col_end, hl_group = NEW_HL_GROUP, id = extid})
+
+-- example: change the highlight's position
+vim.api.nvim_buf_set_extmark(buf, ns_id, NEW_LINE, col_start, {end_col = col_end, hl_group = NEW_HL_GROUP, id = extid})
+
+----------
+Example using the Python API client (|pynvim|):
+
+>python
+src = vim.new_highlight_source()
+buf = vim.current.buffer
+for i in range(5):
+    buf.add_highlight("String",i,0,-1,src_id=src)
+# some time later ...
+buf.clear_namespace(src)
+
+----------
+Example using the API from Vimscript: >vim
+
+call nvim_buf_set_lines(0, 0, 0, v:true, ["test text"])
+let src = nvim_buf_add_highlight(0, 0, "String", 1, 0, 4)
+call nvim_buf_add_highlight(0, src, "Identifier", 0, 5, -1)
+" some time later ...
+call nvim_buf_clear_namespace(0, src, 0, -1)
+
+----------
+h extmark
+doc\api.txt|505| Extended marks
+*api-extended-marks* *extmarks*
+
+let g:mark_ns = nvim_create_namespace('myplugin')
+let g:mark_id = nvim_buf_set_extmark(0, g:mark_ns, 0, 2, {})
+
+------------------------------------------------------------
+
+
